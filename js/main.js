@@ -2,28 +2,25 @@ var target = 0;
 
 var cargarPagina = function () {
 	// Elementos
-	var botones = document.querySelectorAll(".control");
-	var anterior = document.querySelector(".previous");
-	var siguiente = document.querySelector(".next");
-	
+var $botones = $(".control");
+var $anterior = $(".previous");
+var $siguiente = $(".next");	
 	// Eventos
-	botones.forEach(function (boton) {
-		boton.addEventListener("click", cambiarImagen);
-	});
-	anterior.addEventListener("click", anteriorImagen);
-	siguiente.addEventListener("click", siguienteImagen);
+$botones.click(cambiarImagen);
+$anterior.click(anteriorImagen);
+$siguiente.click(siguienteImagen);
 };
 
 var cambiarImagen = function () {
-	target = parseInt(this.dataset.target);
+	target = parseInt($(this).data("target"));
 	mostrarImagen(target);
 };
 
 var mostrarImagen = function (target) {
-	var lastSlide = document.querySelector("div.active");
-	var slide = document.querySelector("div[data-slide='" + target + "']");
-	lastSlide.classList.remove("active");
-	slide.classList.add("active");
+	var $lastSlide = $("div.active");
+	var $slide = $("div[data-slide='" + target + "']");
+	$lastSlide.removeClass("active");
+	$slide.addClass("active");
 };
 
 var anteriorImagen = function (e) {
@@ -40,6 +37,9 @@ var siguienteImagen = function (e) {
 	mostrarImagen(target);mostrarImagen(target);
 };
 
+$(document).ready(cargarPagina);
 
 
-window.addEventListener("load", cargarPagina);
+
+
+
