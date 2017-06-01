@@ -1,5 +1,7 @@
 body{
 	text-align: center;
+	background-color: black;
+	color: white;
 }
 
 .carousel-content {
@@ -10,3 +12,25 @@ body{
 	display: block;
 }
 
+.carousel-content img{
+	height: 400px;
+}
+
+.controls a{
+	font-size: 40px;
+	text-decoration: none;
+	color: white;
+}
+
+button{
+	border-radius: 50%;
+	height: 10px;
+	border: none;
+	cursor: pointer;
+	margin-left:10px;
+	margin-right: 10px;
+}
+
+button:hover{
+	background-color:black;
+}
